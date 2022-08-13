@@ -9,20 +9,20 @@ export const showLoadMoreBtn = function () {
 };
 
 export const imagesMarkup = function (images) {
-let markup = '';
+    let markup = '';
 
-if (images.data.hits.length === 0) {
-    Notiflix.Notify.failure(
-    'Sorry, there are no more images matching your search query. Please try new search.',
-    );
-    hideLoadMoreBtn();
-    return markup;
+    if (images.data.hits.length === 0) {
+        Notiflix.Notify.failure(
+            'Sorry, there are no more images matching your search query. Please try new search.',
+        );
+        hideLoadMoreBtn();
+        return markup;
     }
 
-images.data.hits
-    .map(
-    image =>
-        (markup += ` <div class="photo-card">
+    images.data.hits
+        .map(
+            image =>
+            (markup += `<div class="photo-card">
         <a href="${image.largeImageURL}">
         <img class="img" src="${image.webformatURL}" alt="${image.tags}" loading="lazy" width="250" height="150"/>
     <div class="info">
@@ -40,7 +40,7 @@ images.data.hits
     </p>
     </div></a>
     </div>`),
-    )
-    .join(' ');
+        )
+        .join(' ');
     return markup;
 };
