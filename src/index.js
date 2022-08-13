@@ -1,5 +1,4 @@
 import './css/styles.css';
-import './js/scroll-up';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
 import ImagesAPIService from './js/img-http-service';
